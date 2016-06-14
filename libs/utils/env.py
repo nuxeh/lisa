@@ -350,6 +350,11 @@ class TestEnv(ShareState):
             platform = devlib.platform.arm.Juno()
             self.__modules = ['bl', 'hwmon', 'cpufreq']
 
+        # Initialize Salvator-X board
+        elif self.conf['board'].upper() == 'SALVATOR-X':
+            platform = None
+            self.__modules = ['bl', 'hwmon', 'cpufreq']
+
         # Initialize OAK board
         elif self.conf['board'].upper() == 'OAK':
             platform = Platform(model='MT8173')
